@@ -2,6 +2,7 @@ import Logo from './_components/Logo';
 import Description from  './_components/Description';
  
 import Openlink from '../components/OpenLink';
+import LessonInfo from './_components/LessonInfo';
 
 const Default = () => {
     return (
@@ -17,6 +18,12 @@ const Default = () => {
                     url="https://github.com/rcsoliz/desarrollo-front-end-react"
                 />
 
+                <LessonInfo unit ="1:" 
+                    name="Introducción a react y estructura de proyecto"
+                />
+                <LessonInfo  unit ="2:" 
+                    name="Context API para la gestión del estado global en aplicaciones react"
+                />
             </header>
         </>
     );
