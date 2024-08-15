@@ -8,7 +8,7 @@ const Default = () => {
         <>
             <header className="App-header">
                 <Logo />
-                <Description /> 
+                <Description />  
 
                 <Openlink title ="Lear React" 
                     url="https://reactjs.org"
