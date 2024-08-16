@@ -1,7 +1,7 @@
 import {SET_NAME_MODULE} from "./defaultTypes";
 
 const initalState ={
-    name: '',
+    name: 'Desarrollo front-end RcSoliz',
 };
 
 const defaultReducer = (state = initalState, action) => {
