@@ -7,5 +7,3 @@ export const setNameModule= (nameModule) => {
         payload: nameModule,
     }
 }
-
-//export default setNameModule;
