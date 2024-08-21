@@ -1,5 +1,5 @@
-import SearchBar from "./_components_products/SearchBar";
-import ProductTable from "./_components_products/ProductTable";
+import SearchBar from "./Products/_components/SearchBar";
+import ProductTable from "./Products/_components/ProductTable";
 
 import { useState } from 'react';
 
