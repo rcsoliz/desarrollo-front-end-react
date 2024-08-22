@@ -5,6 +5,8 @@ import Form from "../screens/Form";
 
 import App from "../App";
 
+const basename = process.env.NODE_ENV === "production" ? "/desarrollo-front-end-react" : "/";
+
 const router = createBrowserRouter([
     {
         path: "/",
@@ -25,6 +27,10 @@ const router = createBrowserRouter([
         ]
 
     }    
-])
+], 
+    {
+        basename: basename    
+    }
+);
 
 export default router;
