@@ -3,8 +3,10 @@ import {SET_FORM_DATA} from "./formTypes";
 const initialState = {
     formData: {
         username: "",
-        email:""
+        email:"",
+        password:"",
     },
+    defaultPassword: "mod7ReactUSIP",
 };
 
 const formReducer = (state = initialState, action) => {
@@ -14,7 +16,8 @@ const formReducer = (state = initialState, action) => {
                 ...state,
                 formData:{
                     ...state.formData,
-                    ...action.formData,
+                    ...state.defaultPassword,
+                    ...action.payload,
                 }
             }
         }

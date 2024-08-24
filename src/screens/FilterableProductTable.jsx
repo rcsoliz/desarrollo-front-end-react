@@ -29,10 +29,6 @@ const FilterableProductTable = () => {
     }, []);
 
     return (
-
-        // <>
-        //     <h4>{JSON.stringify(product.PRODUCTS)}</h4>
-        // </>
         <>
             <SearchBar
                 filterText={filterText}
@@ -46,20 +42,6 @@ const FilterableProductTable = () => {
                 inStockOnly = {inStockOnly}    
             />
         </>
-
-        // <>
-        //     <SearchBar
-        //         filterText={filterText}
-        //         inStockOnly={inStockOnly}
-        //         onFilterTextChange ={setFilterText}
-        //         onInStockOnlyChange ={setInStockOnly}
-        //     />
-        //     <ProductTable 
-        //         products={products} 
-        //         filterText = {filterText}
-        //         inStockOnly = {inStockOnly}    
-        //     />
-        // </>
     )
 }
 
