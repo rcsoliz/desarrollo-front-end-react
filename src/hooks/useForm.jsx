@@ -12,8 +12,12 @@ const useForm = (initilValues) => {
             }
         );
     }
+    
+    const reset = () => {
+        setValues(initilValues);
+    };
 
-    return [values, handleChange];
+    return [values, handleChange, reset];
 }
 
 export default useForm;

@@ -161,7 +161,7 @@ nav {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background-color: #333; /* Color de fondo del nav */
+  background-color: #333;
   padding: 1rem;
 }
 
@@ -177,11 +177,26 @@ nav ul li {
 }
 
 nav ul li a {
-  color: white; /* Color de los links */
+  color: white;
   text-decoration: none;
 }
 
 nav span {
-  color: white; /* Color del texto en el span */
+  color: white;
   margin-left: auto;
+}
+
+/* Estilos para un button se paresca a un link*/
+.link-button {
+  background: none;
+  border: none;
+  color: blue;
+  text-decoration: underline;
+  cursor: pointer;
+  padding: 0;
+  font: inherit;
+}
+
+.link-button:hover {
+  color: darkblue;
 }

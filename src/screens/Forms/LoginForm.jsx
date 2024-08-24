@@ -1,15 +1,18 @@
 import useForm from "../../hooks/useForm";
 import { useSelector, useDispatch } from "react-redux";
-import {saveFormData} from "../../redux/form/formAction";
+import {saveFormData, resetFormData } from "../../redux/form/formAction";
 import { motion } from "framer-motion";
 import ModalInfo from "../../components/ModalInfo";
-
+import ModalCloseSesion from "../../components/ModalCloseSession";
 import { useState } from "react"; 
 import { useNavigate } from "react-router-dom"; 
 
 const LoginForm =() => {
-    const [values, handleChange] = useForm({ username: '', email:'', password: ''});
-    const [showModalInfo, setShowModalInfo] = useState(false);
+    const [values, handleChange, reset] = useForm({ username: '', email:'', password: ''});
+    const [showModalInfo,  setShowModalInfo] = useState(false);
+
+    const [showModaCloseSesion, setShowModaCloseSesion] = useState(false);
+
     const form = useSelector(state => state.form);
     const dispatch = useDispatch();
     const navigate = useNavigate(); 
@@ -32,6 +35,14 @@ const LoginForm =() => {
     const showModal = () => {
         setShowModalInfo(true);
     }
+
+    const showModalCloseSesion = () => {
+        setShowModaCloseSesion(true);
+    }
+    const hideModalCloseSesion = () => {
+        setShowModaCloseSesion(false);
+    };
+
     
     const changeTextButton = () => {
         const button = document.getElementById("btn_password");
@@ -45,6 +56,12 @@ const LoginForm =() => {
         }
     }
 
+    const closeSesion = () => {
+        reset()
+        dispatch(resetFormData());
+        hideModalCloseSesion();
+    }
+
     return (
         <motion.div
             initial={{opacity: 0, y: -70}}
@@ -52,10 +69,17 @@ const LoginForm =() => {
             transition={{duration: 1}}
         >
             <ModalInfo 
-                 visible={showModalInfo}
-                 message={"Password incorrecto!!!"}
-                 onClose={hideModalInfo}
-             />
+                visible={showModalInfo}
+                message={"Password incorrecto!!!"}
+                onClose={hideModalInfo}
+            />
+            <ModalCloseSesion 
+                visible={showModaCloseSesion}
+                message={"¿Estas seguro de que quieres cerrar la sesión?"}
+                onClose={hideModalCloseSesion}
+                onCloseSesion={closeSesion}
+            />
+
             <div className="container">
                 <form onSubmit={handleChangeSubmit}>
                     <h5>username : {form.formData.username}</h5>
@@ -94,6 +118,7 @@ const LoginForm =() => {
                     </div>
                     <div className="button-container">
                         <button type="submit">Submit</button>
+                        <button type="button" className="link-button" onClick={showModalCloseSesion}>Logout</button>
                     </div>
                 </form>
             </div>
