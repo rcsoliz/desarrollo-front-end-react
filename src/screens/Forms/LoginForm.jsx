@@ -13,7 +13,7 @@ const LoginForm =() => {
     const form = useSelector(state => state.form);
     const dispatch = useDispatch();
     const navigate = useNavigate(); 
-    
+
     const handleChangeSubmit = (event) => {
         event.preventDefault();
         if (values.password && form.defaultPassword !== values.password) {
@@ -33,6 +33,17 @@ const LoginForm =() => {
         setShowModalInfo(true);
     }
     
+    const changeTextButton = () => {
+        const button = document.getElementById("btn_password");
+        const inputPassword = document.getElementById("password");
+        if(button.textContent  === "Show"){
+            inputPassword.type = "text";
+            button.textContent  = "Hide";
+        }else{
+            inputPassword.type = "password";
+            button.textContent  = "Show";
+        }
+    }
 
     return (
         <motion.div
@@ -73,16 +84,16 @@ const LoginForm =() => {
                     <div>
                         <label htmlFor="password">Password</label>
                         <input 
-                            type="text" 
+                            type="password" 
                             id="password" 
                             name="password"
                             value={values.password}
                             onChange={handleChange}
                         />
+                        <button type="button" id="btn_password" onClick={changeTextButton}>Show</button>
                     </div>
                     <div className="button-container">
                         <button type="submit">Submit</button>
-                        {/* <button onClick={showModal}>Mostrar Modal</button> */}
                     </div>
                 </form>
             </div>
