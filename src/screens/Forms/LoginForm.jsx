@@ -5,19 +5,22 @@ import { motion } from "framer-motion";
 import ModalInfo from "../../components/ModalInfo";
 
 import { useState } from "react"; 
+import { useNavigate } from "react-router-dom"; 
 
 const LoginForm =() => {
     const [values, handleChange] = useForm({ username: '', email:'', password: ''});
     const [showModalInfo, setShowModalInfo] = useState(false);
     const form = useSelector(state => state.form);
     const dispatch = useDispatch();
-
+    const navigate = useNavigate(); 
+    
     const handleChangeSubmit = (event) => {
         event.preventDefault();
-        console.log(values);
         if (values.password && form.defaultPassword !== values.password) {
-            dispatch(saveFormData(values));
             setShowModalInfo(true);
+        }else{
+            dispatch(saveFormData(values));
+            navigate('/');
         }
     }
 
