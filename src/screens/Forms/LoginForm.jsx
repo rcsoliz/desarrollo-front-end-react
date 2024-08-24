@@ -82,9 +82,7 @@ const LoginForm =() => {
 
             <div className="container">
                 <form onSubmit={handleChangeSubmit}>
-                    <h5>username : {form.formData.username}</h5>
-                    <h5>email : {form.formData.email}</h5>
-                    <h5>password : {form.formData.password}</h5>
+                    <h5>FORM LOGIN</h5>
                     <div>
                         <label htmlFor="username">Username</label>
                         <input 
