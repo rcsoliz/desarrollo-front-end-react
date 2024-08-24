@@ -200,3 +200,70 @@ nav span {
 .link-button:hover {
   color: darkblue;
 }
+
+/*Style banner*/
+.banner {
+  width: 80%;
+  margin: 2vw auto;
+  height: 5vw;
+  background-color: green;
+  color: white;
+  text-align: center;
+  padding: 10px;
+  font-size: 16px;
+  box-sizing: border-box;
+}
+.banner p {
+  margin: 1vw;
+  font-size: 1.5vw;
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: bold;
+}
+/*Style bienvenido */
+.title{
+  width: 80%;
+  margin: 2vw auto;
+  font-size: 20px;
+  text-align: left;
+  font-weight: bold;
+
+}
+.line{
+  border-bottom: 1px solid green;
+  padding-bottom: 2px; 
+}
+.description{
+  width: 80%;
+  margin: 2vw auto;
+  font-size: 20px;
+  text-align: left;
+}
+
+.bold{
+  font-weight: bold;
+}
+/*Style Flex-Container*/
+.flex-container {
+  width: 80%;
+  margin: 2vw auto;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+.column{
+  flex: 1 1 10.5%;
+  box-sizing: border-box;
+  padding: 2px;
+  text-align: center;
+}
+/*Style footer*/
+.line__footer{
+  width: 80%;
+  margin: 2vw auto;
+  border-top: 1px solid #cfcdcf;
+  margin-top: 5vw; 
+}
+.text___fotter{
+  text-align: center;
+  font-size: 14px;
+} 
