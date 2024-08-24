@@ -4,6 +4,7 @@ import FilterableProductTable from "../screens/FilterableProductTable";
 import Form from "../screens/Form";
 
 import App from "../App";
+import LandingPage from '../screens/LandingPage';
 
 const basename = process.env.NODE_ENV === "production" ? "/desarrollo-front-end-react" : "/";
 
@@ -12,6 +13,10 @@ const router = createBrowserRouter([
         path: "/",
         element: <App />,
         children: [
+            {
+                path: '/',
+                element:<LandingPage />,
+            },
             {
                 path: '/default',
                 element: <Default />, 
