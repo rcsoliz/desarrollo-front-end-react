@@ -31,7 +31,6 @@ const LoginForm =() => {
         setShowModalInfo(false);
     };
 
-   
     const showModal = () => {
         setShowModalInfo(true);
     }

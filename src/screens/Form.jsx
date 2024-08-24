@@ -4,7 +4,6 @@ const Form = () => {
         <>
             <Login />
         </>
-        
     )    
 }
 export default Form 
