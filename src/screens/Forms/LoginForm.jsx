@@ -23,7 +23,9 @@ const LoginForm =() => {
             setShowModalInfo(true);
         }else{
             dispatch(saveFormData(values));
-            navigate('/');
+            if(values.password && form.defaultPassword === values.password){
+                navigate('/');
+            }
         }
     }
 
